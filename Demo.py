@@ -56,7 +56,7 @@ for url in api_urls:
         print json_response
         f = open('some.csv', 'wb')
         writer = csv.writer(f)
-        
+        #comment
         if type(json_response) == type(dict()):
             for each in json_response:
                 writer.writerow([json_response[each]])
