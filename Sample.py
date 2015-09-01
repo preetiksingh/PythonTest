@@ -1,19 +1,23 @@
+import random
 
+num_attempts = 5
+num_secret=random.randint(1,10)
+def difference_num(a):
+    c=a-num_secret
+    print "difference is",c
 
-def printText(txt):
-    lines = txt.split('\n')
-    for line in lines:
-        print line.strip()
-
-httpServ = httplib.HTTPConnection("127.0.0.1", 80)
-httpServ.connect()
-
-quote = "test"
-httpServ.request('POST', '/cgi_form.cgi', 'name=Brad&quote=%s' % quote)
-
-response = httpServ.getresponse()
-if response.status == httplib.OK:
-    print "Output from CGI request"
-    printText (response.read())
-
-httpServ.close()
+for i in range(0,5):
+    var_guess = int(input('Guess the random_number:'))
+    
+    if var_guess < num_secret:
+        print"lower value"
+        
+    elif var_guess>num_secret:
+        print"higher value"
+        
+    else:
+        print "Hurray",num_secret
+        
+    difference_num(var_guess)
+        
+            
